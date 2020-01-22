@@ -1,0 +1,5 @@
+RewriteEngine On
+
+#For Action
+RewriteRule ^check/([a-zA-Z0-9]+):([a-zA-Z0-9]+)$ protect.php?t_player=$1&id=$2 [L]
+RewriteRule ^check/([a-zA-Z0-9]+):([a-zA-Z0-9]+)/$ protect.php?t_player=$1&id=$2 [L]

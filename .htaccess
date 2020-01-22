@@ -1,0 +1,68 @@
+RewriteEngine On
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#Page
+RewriteRule ^assets/js/gpicker.js$ assets/js/gpicker.min.php [L]
+RewriteRule ^assets/js/6576815c5202ef23c57b797dfcb29d95.js$ assets/js/gpicker.min.php [L]
+
+RewriteRule ^upload/links$ upload.php [L]
+RewriteRule ^upload/links/$ upload.php [L]
+RewriteRule ^upload/drive$ upload-drive.php [L]
+RewriteRule ^upload/drive/$ upload-drive.php [L]
+RewriteRule ^manage/files$ myfile.php [L]
+RewriteRule ^manage/files/$ myfile.php [L]
+RewriteRule ^file-report$ broken-file.php [L]
+RewriteRule ^file-report/$ broken-file.php [L]
+RewriteRule ^account$ profile.php [L]
+RewriteRule ^account/$ profile.php [L]
+
+##
+RewriteRule ^page/about$ page/page-about.php [L]
+RewriteRule ^page/about/$ page/page-about.php [L]
+RewriteRule ^page/terms-conditions$ page/page-tos.php [L]
+RewriteRule ^page/terms-conditions/$ page/page-tos.php [L]
+RewriteRule ^page/privacy-policy$ page/page-privacy.php [L]
+RewriteRule ^page/privacy-policy/$ page/page-privacy.php [L]
+
+#For ajax
+RewriteRule ^ajax/share$ system/upload/upload-links.php [L,QSA,NC]
+RewriteRule ^ajax/share/$ system/upload/upload-links.php [L,QSA,NC]
+RewriteRule ^ajax/share-picker$ system/upload/upload-picker.php [L,QSA,NC]
+RewriteRule ^ajax/share-picker/$ system/upload/upload-picker.php [L,QSA,NC]
+RewriteRule ^ajax/delete$ system/filemanager/delete-file.php [L,QSA,NC]
+RewriteRule ^ajax/delete/$ system/filemanager/delete-file.php [L,QSA,NC]
+RewriteRule ^ajax/update-filename$ system/filemanager/update-filename.php [L,QSA,NC]
+RewriteRule ^ajax/update-filename/$ system/filemanager/update-filename.php [L,QSA,NC]
+RewriteRule ^ajax/multiup-mirror$ system/mirror-multiup.php [L,QSA,NC]
+RewriteRule ^ajax/multiup-mirror/$ system/mirror-multiup.php [L,QSA,NC]
+
+RewriteRule ^download$ download.php [L,QSA,NC]
+RewriteRule ^download/$ download.php [L,QSA,NC]
+
+#For Plugins
+RewriteRule ^api/googl$ plugins/goo.gl/googl.php [L]
+RewriteRule ^api/googl/$ plugins/goo.gl/googl.php [L]
+RewriteRule ^embed/([a-zA-Z0-9]+)$ plugins/player/player.php?id=$1 [L,QSA,NC]
+RewriteRule ^embed/([a-zA-Z0-9]+)/$ plugins/player/player.php?id=$1 [L,QSA,NC]
+
+RewriteRule ^callback$ system/login.php [L]
+RewriteRule ^callback/$ system/login.php [L]
+RewriteRule ^OAuth$ system/login.php [L]
+RewriteRule ^OAuth/$ system/login.php [L]
+RewriteRule ^logout$ system/logout.php [L]
+RewriteRule ^logout/$ system/logout.php [L]
+RewriteRule ^myFilejson$ system/filemanager/source-file-user.php [L]
+RewriteRule ^myFilejson/$ system/filemanager/source-file-user.php [L]
+RewriteRule ^myBrokenjson$ system/filemanager/source-file-broken.php [L]
+RewriteRule ^myBrokenjson/$ system/filemanager/source-file-broken.php [L]
+RewriteRule ^statistic$ system/statistic.php [L]
+RewriteRule ^statistic/$ system/statistic.php [L]
+RewriteRule ^login$ login.php [L]
+RewriteRule ^login/$ login.php [L]
+
+RewriteRule ^([a-zA-Z0-9]+)$ file.php?id=$1 [L]
+RewriteRule ^([a-zA-Z0-9]+)/$ file.php?id=$1 [L]
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9-_]+)$ file.php?id=$1 [L]
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9-_]+)/$ file.php?id=$1 [L]
